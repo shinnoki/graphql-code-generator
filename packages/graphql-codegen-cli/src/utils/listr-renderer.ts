@@ -50,6 +50,7 @@ export class Renderer {
             return { msg: isDetailedError(error) ? error.details : null, rawError: error };
           })
           .map(({ msg, rawError }, i) => {
+            // eslint-disable-next-line prefer-destructuring
             const source: string | Source | undefined = (err.errors[i] as any).source;
 
             msg = msg ? chalk.gray(indentString(stripIndent(`${msg}`), 4)) : null;

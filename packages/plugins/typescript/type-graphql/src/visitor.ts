@@ -228,6 +228,7 @@ export class TypeGraphQLVisitor<
       if (interfaces.length > 1) {
         decoratorOptions.implements = `[${interfaces.join(', ')}]`;
       } else if (interfaces.length === 1) {
+        // eslint-disable-next-line prefer-destructuring
         decoratorOptions.implements = interfaces[0];
       }
       declarationBlock = declarationBlock.withDecorator(

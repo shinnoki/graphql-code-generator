@@ -25,7 +25,7 @@ export const preset: Types.OutputPreset<ModulesConfig> = {
       throw new Error(`Preset "graphql-modules" requires to use GraphQL SDL`);
     }
 
-    const extensions: any = options.schemaAst!.extensions;
+    const { extensions } = options.schemaAst as any;
     const sourcesByModuleMap = groupSourcesByModule(extensions.extendedSources, baseOutputDir);
     const modules = Object.keys(sourcesByModuleMap);
 

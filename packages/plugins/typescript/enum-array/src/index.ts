@@ -35,6 +35,7 @@ export const plugin: PluginFunction<EnumArrayPluginConfig> = async (
   _documents: Types.DocumentFile[],
   config: EnumArrayPluginConfig
 ): Promise<Types.PluginOutput> => {
+  // eslint-disable-next-line prefer-destructuring
   const importFrom: EnumArrayPluginConfig['importFrom'] = config.importFrom;
   const enums = getEnumTypeMap(schema);
   const content = enums.map(buildArrayDefinition).join('\n');
